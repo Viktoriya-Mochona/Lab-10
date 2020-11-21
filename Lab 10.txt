@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.lang.Math;     // Note: Needed for math functions
+
+class PaintEstimator {
+
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        double wallHeight = 0.0;
+        double wallWidth = 0.0;
+        double wallArea = 0.0;
+        double gallonsPaintNeeded = 0.0;
+        double cansNeeded = 0;
+
+        final double SQUARE_FEET_PER_GALLON = 350.0;
+        final double GALLONS_PER_CAN = 1.0;
+
+        System.out.println("Enter wall height (feet):");
+        wallHeight = scnr.nextDouble();
+
+        System.out.println("Enter wall width (feet):");
+        wallWidth = scnr.nextDouble();
+
+        wallArea = wallHeight * wallWidth;
+        System.out.println("Wall area: " + wallArea + " square feet");
+
+        gallonsPaintNeeded = wallArea / SQUARE_FEET_PER_GALLON;
+        System.out.println("Paint needed: " + gallonsPaintNeeded + " gallons");
+
+        cansNeeded = gallonsPaintNeeded / GALLONS_PER_CAN;
+        System.out.println("Cans needed: " + Math.round(cansNeeded) + " can(s)");
+    }
+}
